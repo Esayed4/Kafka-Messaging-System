@@ -4,8 +4,10 @@ This project demonstrates a basic implementation of Kafka producers and consumer
 
 ## Files
 
-- `create_producer.py`: Script for creating a Kafka producer that sends messages to a Kafka topic.
-- `create_consumer.py`: Script for creating a Kafka consumer that reads messages from a Kafka topic.
+- `create_topic_practice.py`: Script for creating a Kafka topic named `practice` with 3 partitions.
+- `create_producer.py`: Script for creating a Kafka producer that sends messages to the `practice` topic.
+- `create_consumer.py`: Script for creating a Kafka consumer that reads messages from the `practice` topic.
+- `create_concumer1.py`: Similar to `create_consumer.py`, but processes keys and values differently.
 
 ## Requirements
 
@@ -43,7 +45,7 @@ This project demonstrates a basic implementation of Kafka producers and consumer
     ```
     1:Hello Kafka
     ```
-    Enter `11` as the key to send multiple close messages.
+   Enter `11` as the key to send multiple close messages.
 
 ### Running the Consumer
 
@@ -54,10 +56,20 @@ This project demonstrates a basic implementation of Kafka producers and consumer
     ```
 3. The consumer will start reading messages from the Kafka topic and print them to the console.
 
+### Running the Alternative Consumer
+
+1. Open another terminal and navigate to the project directory.
+2. Run the alternative consumer script:
+    ```sh
+    python create_concumer1.py
+    ```
+3. This consumer behaves similarly but decodes keys and values differently and prints all consumed messages.
+
 ## Additional Information
 
 - **Kafka Producer**: Produces messages to the Kafka topic. It allows sending a special message when the key `11` is entered to trigger multiple close messages.
 - **Kafka Consumer**: Consumes messages from the Kafka topic. It prints the messages and stops if it receives a message with the key `11`.
+- **Alternative Kafka Consumer**: Similar to the standard consumer but with different key/value processing.
 
 ## Contributing
 
